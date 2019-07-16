@@ -21,7 +21,7 @@ public class MockService {
     }
 
     public void addSubject(Subject subject) {
-        Subject addSubject = new Subject(subject.getName(), subject.getCode(), subject.getPrerequsiteSubject(), subject.getGrade());
+        Subject addSubject = new Subject(subject.getName(), subject.getCode(), subject.getPrerequisiteSubject(), subject.getGrade());
         mockRepository.addSubject(addSubject);
         return;
     }
