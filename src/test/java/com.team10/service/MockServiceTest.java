@@ -46,4 +46,10 @@ public class MockServiceTest {
         doThrow(new IllegalArgumentException()).when(subject).setName("실전코딩2");
         subject.setName("실전코딩2");
     }
+    //by 정상현, 제한된 시간내에 실행되는지에 대한 테스트.
+    @Test(timeout = 2000)
+    public void 제한_시간내에_실행되는지_테스트() throws InterruptedException{
+        Thread.sleep(1000);
+        System.out.println("제한된 시간 내에 수행되면 테스트 passed!");
+    }
 }
