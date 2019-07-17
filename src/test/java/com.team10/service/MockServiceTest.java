@@ -38,4 +38,12 @@ public class MockServiceTest {
         subject.getCode();
         verify(subject, atLeast(3)).getCode();
     }
+
+    // by 정상현, 존재하지 않는 과목명을 이름으로 설정하면 오류가 발생하게 테스트.
+    @Test(expected = IllegalArgumentException.class)
+    public void 존재하지_않는_과목명을_설정하면_오류를_발생(){
+        Subject subject = mock(Subject.class);
+        doThrow(new IllegalArgumentException()).when(subject).setName("실전코딩2");
+        subject.setName("실전코딩2");
+    }
 }
