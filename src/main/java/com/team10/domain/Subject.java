@@ -8,6 +8,6 @@ import lombok.Data;
 public class Subject {
     private String name;
     private String code;
-    private String prerequsiteSubject;
+    private String prerequisiteSubject;
     private int grade;
 }
