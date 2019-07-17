@@ -52,4 +52,12 @@ public class MockServiceTest {
         Thread.sleep(1000);
         System.out.println("제한된 시간 내에 수행되면 테스트 passed!");
     }
+
+    @Test
+    public void 과목명으로_검색하면_해당_과목이_나오고_Service에서_메소드를_호출하는지_테스트(){
+        when(mockService.findSubjectByName("실전코딩1")).thenReturn(new Subject("실전코딩1", "X470", "객체지향프로그래밍",3));
+        String subjectName = mockService.findSubjectByName("실전코딩1").getName();
+        assertThat(subjectName, is("실전코딩1"));
+        verify(mockRepository, times(1)).findSubjectByName(any(String.class));
+    }
 }
