@@ -38,4 +38,26 @@ public class MockServiceTest {
         subject.getCode();
         verify(subject, atLeast(3)).getCode();
     }
+
+    // by 정상현, 존재하지 않는 과목명을 이름으로 설정하면 오류가 발생하게 테스트.
+    @Test(expected = IllegalArgumentException.class)
+    public void 존재하지_않는_과목명을_설정하면_오류를_발생(){
+        Subject subject = mock(Subject.class);
+        doThrow(new IllegalArgumentException()).when(subject).setName("실전코딩2");
+        subject.setName("실전코딩2");
+    }
+    //by 정상현, 제한된 시간내에 실행되는지에 대한 테스트.
+    @Test(timeout = 2000)
+    public void 제한_시간내에_실행되는지_테스트() throws InterruptedException{
+        Thread.sleep(1000);
+        System.out.println("제한된 시간 내에 수행되면 테스트 passed!");
+    }
+
+    @Test
+    public void 과목명으로_검색하면_해당_과목이_나오고_Service에서_메소드를_호출하는지_테스트(){
+        when(mockService.findSubjectByName("실전코딩1")).thenReturn(new Subject("실전코딩1", "X470", "객체지향프로그래밍",3));
+        String subjectName = mockService.findSubjectByName("실전코딩1").getName();
+        assertThat(subjectName, is("실전코딩1"));
+        verify(mockRepository, times(1)).findSubjectByName(any(String.class));
+    }
 }
