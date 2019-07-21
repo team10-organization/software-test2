@@ -12,4 +12,6 @@ public interface MockRepository {
     public void addSubject(Subject subject);
 
     public int getGradebySubjectName(String name);
+
+    public Subject createSubjectbyName(String anyString);
 }

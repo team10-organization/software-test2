@@ -32,4 +32,9 @@ public class MockService {
         return grade;
 
     }
+
+    public Subject createSubjectbyName(String name)
+    {
+        return mockRepository.createSubjectbyName(name);
+    }
 }
