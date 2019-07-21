@@ -186,6 +186,29 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="MockServiceTest.과목명을_입력하면_학점을_리턴하는_테스트" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Subject-test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.team10.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.team10.service" />
+      <option name="MAIN_CLASS_NAME" value="com.team10.service.MockServiceTest" />
+      <option name="METHOD_NAME" value="과목명을_입력하면_학점을_리턴하는_테스트" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MockServiceTest.과목명을_입력하면_학점을_리턴하는_테스트" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>

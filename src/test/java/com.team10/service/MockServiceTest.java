@@ -63,7 +63,7 @@ public class MockServiceTest {
 
 
     @Test
-    public void 과목명을_입력하면_학점을_리턴하는_테스트()//by윤준성
+    public void 과목명을_입력하면_학점을_리턴하는_테스트()//by윤준성 통과!!
     {
         Subject subject = mock(Subject.class);
         when(mockService.getGradebySubjectName(anyString())).thenReturn(3);
