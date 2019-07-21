@@ -25,4 +25,9 @@ public class MockService {
         mockRepository.addSubject(addSubject);
         return;
     }
+
+    public int getGradebySubjectName(String name)
+    {
+
+    }
 }

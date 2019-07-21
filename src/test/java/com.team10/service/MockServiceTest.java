@@ -60,4 +60,14 @@ public class MockServiceTest {
         assertThat(subjectName, is("실전코딩1"));
         verify(mockRepository, times(1)).findSubjectByName(any(String.class));
     }
+
+
+    @Test
+    public void 과목명을_입력하면_학점을_리턴하는_테스트()//by윤준성
+    {
+        Subject subject = mock(Subject.class);
+        when(mockService.getGradebySubjectName(anyString())).thenReturn(3);
+        assertThat(mockService.getGradebySubjectName("실전코딩"), is(3));
+        verify(mockRepository, times(1)).getGradebySubjectName(anyString());
+    }
 }
