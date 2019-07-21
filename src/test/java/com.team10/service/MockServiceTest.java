@@ -103,4 +103,14 @@ public class MockServiceTest {
         verify(mockRepository, times(2)).findSubjectByName(anyString());
     } /* 과목명으로 검색하면 선수과목명을 리턴하는지 테스트하고
      findSubjectByName가 2번 호출됐는지 확인하는 코드 changed by 마성호 */
+
+    @Test
+    public void 선수과목명을_입력하면_연계된_과목명_리턴() {
+        Subject subject = mock(Subject.class);
+        when(mockService.findSubjectByName("객체지향프로그래밍")).thenReturn(new Subject("실전코딩", "X230",
+                "객체지향프로그래밍", 3));
+        assertThat(mockService.findSubjectByName("객체지향프로그래밍").getName(), Is.is("실전코딩"));
+        verify(subject, never()).setName(anyString());
+    } /* 선수과목명으로 검색하면 연계된 과목명을 리턴하는지 테스트하고
+     setName 메소드가 호출되지 않았으면 pass하는 코드 changed by 마성호 */
 }
