@@ -28,6 +28,8 @@ public class MockService {
 
     public int getGradebySubjectName(String name)
     {
+        int grade = mockRepository.getGradebySubjectName(name);
+        return grade;
 
     }
 }
