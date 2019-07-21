@@ -75,7 +75,7 @@ public class MockServiceTest {
     @Test
     public void 과목명을_넣어서_클래스를만들면_과목명이_잘들어갔는지_확인하는_테스트()//by 윤준성
     {
-        
+        when(mockService.createSubjectbyName("실전코딩")).thenReturn(new Subject("실전코딩", null, null, 3));
         Subject subject = mockService.createSubjectbyName("실전코딩");
         assertThat(subject.getName(), is("실전코딩"));
         verify(mockRepository, times(1)).createSubjectbyName(anyString());
